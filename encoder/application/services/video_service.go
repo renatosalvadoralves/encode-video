@@ -44,7 +44,7 @@ func (v *VideoService) Download(bucketName string) error {
 		return err
 	}
 
-	f, err := os.Create(os.Getenv("localStoragePath") + "/" + v.Video.ID + ".mp4")
+	f, err := os.Create(os.Getenv("LOCAL_STORAGE_PATH") + "/" + v.Video.ID + ".mp4")
 	if err != nil {
 		return err
 	}
@@ -63,13 +63,13 @@ func (v *VideoService) Download(bucketName string) error {
 
 func (v *VideoService) Fragment() error {
 
-	err := os.Mkdir(os.Getenv("localStoragePath")+"/"+v.Video.ID, os.ModePerm)
+	err := os.Mkdir(os.Getenv("LOCAL_STORAGE_PATH")+"/"+v.Video.ID, os.ModePerm)
 	if err != nil {
 		return err
 	}
 
-	source := os.Getenv("localStoragePath") + "/" + v.Video.ID + ".mp4"
-	target := os.Getenv("localStoragePath") + "/" + v.Video.ID + ".frag"
+	source := os.Getenv("LOCAL_STORAGE_PATH") + "/" + v.Video.ID + ".mp4"
+	target := os.Getenv("LOCAL_STORAGE_PATH") + "/" + v.Video.ID + ".frag"
 
 	cmd := exec.Command("mp4fragment", source, target)
 	output, err := cmd.CombinedOutput()

@@ -30,5 +30,7 @@ RUN apk add --update --upgrade curl python unzip bash gcc g++ scons && \
 
 WORKDIR /go/src
 
+ENV GOOGLE_APPLICATION_CREDENTIALS=/go/src/encoder/bucket-credential.json
+
 #vamos mudar para o endpoint correto. Usando top apenas para segurar o processo rodando
 ENTRYPOINT [ "top" ]

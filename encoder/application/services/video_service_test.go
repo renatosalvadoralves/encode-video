@@ -5,7 +5,6 @@ import (
 	"encoder/application/services"
 	"encoder/domain"
 	"encoder/framework/database"
-	"fmt"
 	"log"
 	"testing"
 	"time"
@@ -44,7 +43,8 @@ func TestVideoServiceDownload(t *testing.T) {
 	videoService.VideoRepository = repo
 
 	err := videoService.Download("test-bucket-encode-video")
+	require.Nil(t, err)
 
-	fmt.Println(err)
+	err = videoService.Fragment()
 	require.Nil(t, err)
 }
