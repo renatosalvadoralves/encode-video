@@ -2,8 +2,8 @@ package services
 
 import (
 	"context"
+	"fmt"
 	"io"
-	"log"
 	"os"
 	"path/filepath"
 	"runtime"
@@ -110,7 +110,7 @@ func (vu *VideoUpload) uploadWorker(
 		err := vu.UploadObject(vu.Paths[x], uploadClient, ctx)
 		if err != nil {
 			vu.Errors = append(vu.Errors, vu.Paths[x])
-			log.Printf("error during the upload: %v. Error: %v", vu.Paths[x], err)
+			fmt.Printf("error during the upload: %v. Error: %v", vu.Paths[x], err)
 			returnChan <- err.Error()
 		}
 
