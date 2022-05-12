@@ -3,14 +3,12 @@ module encoder
 go 1.14
 
 require (
-	cloud.google.com/go/storage v1.22.0
-	github.com/asaskevich/govalidator v0.0.0-20210307081110-f21760c49a8d
-	github.com/jinzhu/gorm v1.9.16
-	github.com/lib/pq v1.10.5
+	cloud.google.com/go/storage v1.9.0
+	github.com/asaskevich/govalidator v0.0.0-20200428143746-21a406dcc535
+	github.com/jinzhu/gorm v1.9.12
+	github.com/joho/godotenv v1.3.0
+	github.com/lib/pq v1.1.1
 	github.com/satori/go.uuid v1.2.0
 	github.com/sirupsen/logrus v1.8.1
-	github.com/stretchr/testify v1.7.1
-	golang.org/x/sys v0.0.0-20220422013727-9388b58f7150 // indirect
-	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
-	gorm.io/gorm v1.23.5
+	github.com/stretchr/testify v1.6.1
 )
